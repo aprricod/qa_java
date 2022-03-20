@@ -8,10 +8,15 @@ public class FelineTest {
 
     @Test
     public void eatMeat() {
+        Feline feline = new Feline();
     }
 
     @Test
     public void getFamily() {
+        Feline feline = new Feline();
+        String actual = feline.getFamily();
+        String expected = "Кошачьи";
+        assertEquals(expected, actual);
     }
 
     @Test

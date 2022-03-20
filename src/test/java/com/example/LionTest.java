@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 public class LionTest {
 
     @Test
-    public void doesHaveMane() {
+    public void shouldHaveMane() {
     }
 
     @Test
