@@ -20,10 +20,20 @@ public class FelineTest {
     }
 
     @Test
-    public void getKittens() {
+    public void getKittensTest() {
+        Feline feline = new Feline();
+        int actual = feline.getKittens();
+        int expected = 1;
+        System.out.println(feline.getKittens());
+        assertEquals(expected, actual);
     }
 
     @Test
-    public void testGetKittens() {
+    public void getKittensKittensCountTest() {
+        Feline feline = new Feline();
+        int actual = feline.getKittens();
+        int expected = feline.getKittens();
+        System.out.println(feline.getKittens());
+        assertEquals(expected, actual);
     }
 }

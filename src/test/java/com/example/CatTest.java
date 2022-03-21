@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 @RunWith(MockitoJUnitRunner.class)
 public class CatTest {
 
-    private Feline feline;
+    Feline feline;
 
     @Mock
     Cat cat;
