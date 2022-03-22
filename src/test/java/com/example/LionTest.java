@@ -19,6 +19,23 @@ public class LionTest {
     Feline feline;
 
     @Test
+    public void getFoodTest() throws Exception {
+        Lion lion = new Lion("Самец", feline);
+        Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        List<String> actual = lion.getFood();
+        List<String> expected = List.of("Животные", "Птицы", "Рыба");
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    public void getKittensTest() throws Exception {
+        Lion lion = new Lion("Самец", feline);
+        int actual = lion.getKittens();
+        int expected = lion.getKittens();
+        assertEquals(actual, expected);
+    }
+
+    @Test
     public void doesHaveManeMaleTest() throws Exception {
         Lion lion = new Lion("Самец", feline);
         boolean actual = lion.doesHaveMane();
@@ -33,31 +50,5 @@ public class LionTest {
         boolean expected = false;
         assertEquals(actual, expected);
     }
-
-    @Test
-    public void doesHaveManeNegativeTest() throws Exception {
-        Lion lion = new Lion("Проверка исключения", feline);
-        boolean actual = lion.doesHaveMane();
-        boolean expected = false;
-        assertEquals(actual, expected);
-    }
-
-    //    не работает
-    @Test
-    public void getKittens() throws Exception {
-        Lion lion = new Lion(sex, feline);
-        int actual = lion.getKittens();
-        int expected = lion.getKittens();
-        assertEquals(actual, expected);
-    }
-
-    //    не работает
-    @Test
-    public void getFood() throws Exception {
-        Lion lion = new Lion(sex, feline);
-        Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
-        List<String> actual = lion.getFood();
-        List<String> expected = List.of("Животные", "Птицы", "Рыба");
-        assertEquals(actual, expected);
-    }
 }
+
