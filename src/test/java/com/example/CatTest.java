@@ -13,25 +13,24 @@ import static org.junit.Assert.*;
 @RunWith(MockitoJUnitRunner.class)
 public class CatTest {
 
-    Feline feline;
 
     @Mock
-    Cat cat;
+    Feline feline;
+
+    @Test
+    public void getFood() throws Exception {
+        Cat cat = new Cat(feline);
+        Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        List<String> actual = cat.getFood();
+        List<String> expected = List.of("Животные", "Птицы", "Рыба");
+        assertEquals(expected, actual);
+    }
 
     @Test
     public void shouldPronounceCorrectSound() {
         Cat cat = new Cat(feline);
         String actual = cat.getSound();
         String expected = "Мяу";
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void getFood() throws Exception {
-        Cat cat = new Cat(feline);
-        Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
-        List<String> actual = cat.getFood();
-        List<String> expected = List.of("Животные", "Птицы", "Рыба");
-        assertEquals(expected, actual);
+        assertEquals("Фактический результат не соответствует ожидаемому", expected, actual);
     }
 }
