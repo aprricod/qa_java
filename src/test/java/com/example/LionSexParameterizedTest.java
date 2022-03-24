@@ -18,11 +18,11 @@ public class LionSexParameterizedTest {
         this.sex = sex;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Test data {index}: {0} = {1}")
     public static Object[] doesHaveManeData() {
         return new Object[][]{
                 {"Самец", true},
-                {"Самка", false}, // передали тестовые данные
+                {"Самка", false},
         };
     }
 
@@ -30,6 +30,6 @@ public class LionSexParameterizedTest {
     public void doesHaveMane() throws Exception {
         Lion lion = new Lion(sex, feline);
         boolean actual = lion.doesHaveMane();
-        assertEquals(actual, expected);
+        assertEquals("ff", expected, actual);
     }
 }

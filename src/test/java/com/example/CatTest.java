@@ -31,6 +31,7 @@ public class CatTest {
         Cat cat = new Cat(feline);
         String actual = cat.getSound();
         String expected = "Мяу";
-        assertEquals("Фактический результат не соответствует ожидаемому", expected, actual);
+        String msg = "Тест провален. %s не равно %s";
+        assertEquals(String.format(msg, actual, expected), expected, actual);
     }
 }
