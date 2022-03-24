@@ -30,6 +30,7 @@ public class LionSexParameterizedTest {
     public void doesHaveMane() throws Exception {
         Lion lion = new Lion(sex, feline);
         boolean actual = lion.doesHaveMane();
-        assertEquals("ff", expected, actual);
+        String msg = "Тест провален. Ожидается %s, но фактически получено %s";
+        assertEquals(String.format(msg, expected, actual), expected, actual);
     }
 }

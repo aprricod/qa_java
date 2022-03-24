@@ -24,7 +24,7 @@ public class LionTest {
         Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String> actual = lion.getFood();
         List<String> expected = List.of("Животные", "Птицы", "Рыба");
-        assertEquals(expected, actual);
+        assertEquals("Получен некорректный список видов", expected, actual);
     }
 
     @Test
@@ -32,7 +32,9 @@ public class LionTest {
         Lion lion = new Lion("Самец", feline);
         int actual = lion.getKittens();
         int expected = lion.getKittens();
-        assertEquals(expected, actual);
+        System.out.println(actual);
+        System.out.println(expected);
+        assertEquals("Получено некорректное число котят", expected, actual);
     }
 
     @Test
@@ -40,7 +42,7 @@ public class LionTest {
         Lion lion = new Lion("Самец", feline);
         boolean actual = lion.doesHaveMane();
         boolean expected = true;
-        assertEquals(expected, actual);
+        assertEquals("Ожидается true, но фактически получено false", expected, actual);
     }
 
     @Test
@@ -48,7 +50,7 @@ public class LionTest {
         Lion lion = new Lion("Самка", feline);
         boolean actual = lion.doesHaveMane();
         boolean expected = false;
-        assertEquals(expected, actual);
+        assertEquals("Ожидается false, но фактически получено true", expected, actual);
     }
 }
 

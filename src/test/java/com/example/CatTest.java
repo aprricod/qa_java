@@ -23,7 +23,7 @@ public class CatTest {
         Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String> actual = cat.getFood();
         List<String> expected = List.of("Животные", "Птицы", "Рыба");
-        assertEquals(expected, actual);
+        assertEquals("Получен некорректный список видов", expected, actual);
     }
 
     @Test
@@ -31,7 +31,7 @@ public class CatTest {
         Cat cat = new Cat(feline);
         String actual = cat.getSound();
         String expected = "Мяу";
-        String msg = "Тест провален. %s не равно %s";
-        assertEquals(String.format(msg, actual, expected), expected, actual);
+        String msg = "Тест провален. Ожидается %s, но фактически получено %s";
+        assertEquals(String.format(msg, expected, actual), expected, actual);
     }
 }
